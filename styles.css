@@ -1,0 +1,94 @@
+*{
+    background-color: gold;
+    color: black;
+    font-family: 'Roboto', sans-serif;
+   
+    
+    line-height: 1.5;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    box-sizing: border-box;
+    
+
+}
+.container{
+    background-color: red;
+    max-width: 560px;
+    max-height: 745px;
+    margin: 0 auto;
+    padding: 10px;
+    border: 2px solid black;
+    margin-top: 90px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-shadow: 3px 3px 3px 3px black;
+
+    
+    
+
+
+}
+#group-btn{
+    display: flex;
+    width: 100%;
+
+}
+
+#group-btn > button > img{
+    width: 100%;
+    
+   
+}
+h1, h3{
+    text-align: center;
+   margin-top: 20px;
+   box-shadow: 3px 3px 3px 3px black;
+}
+
+footer{
+    margin-top: 100px;
+    font-size: 20px;
+    box-shadow: 3px 3px 3px 3px black;
+}
+
+button:hover{
+   animation: ani alternate 1s infinite;
+    
+}
+@keyframes ani{
+    0%{
+        transform: scale(1);
+    }
+    100%{
+        transform: scale(1.1);
+    }
+}
+#text{
+    padding: 0;
+    margin-top: 26px;
+    font-size: 40px;
+    color: dodgerblue;
+    animation: cm alternate 4s infinite;
+   
+}
+@keyframes cm{
+    0%{
+        transform: rotateY(0deg);
+       
+    }
+    100%{
+        transform:  rotateY(360deg);
+    }
+}
+
+.box img{
+    text-align: center;
+    width: 350px;
+    height: 250px;
+    margin-top: 45px;
+    box-shadow: 3px 3px 3px 3px black;
+}
