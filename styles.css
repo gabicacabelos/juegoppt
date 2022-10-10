@@ -6,7 +6,7 @@
     
     line-height: 1.5;
     margin: 0;
-    padding: 0;
+    padding: 0px;
     text-align: center;
     text-decoration: none;
     text-transform: uppercase;
@@ -21,11 +21,12 @@
     margin: 0 auto;
     padding: 10px;
     border: 2px solid black;
-    margin-top: 90px;
+    margin-top: 65px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     box-shadow: 3px 3px 3px 3px black;
+    
 
     
     
@@ -50,7 +51,7 @@ h1, h3{
 }
 
 footer{
-    margin-top: 100px;
+    margin-top: 155px;
     font-size: 20px;
     box-shadow: 3px 3px 3px 3px black;
 }
@@ -69,10 +70,11 @@ button:hover{
 }
 #text{
     padding: 0;
-    margin-top: 26px;
+    margin-top: 25px;
     font-size: 40px;
     color: dodgerblue;
     animation: cm alternate 4s infinite;
+    
    
 }
 @keyframes cm{
@@ -98,4 +100,48 @@ button:hover{
     border: 4px solid black;
     border-radius: 5px;
     font-size: 30px;
+   
+}
+#playAgain{
+    width: 250px;
+    height: 100px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    margin-top: 0px;
+    box-shadow: 3px 3px 3px 3px black;
+    box-sizing: content-box;
+    animation:aparicion 0.5s; 
+    grid-area: boton;
+    
+
+    
+    
+}
+@keyframes aparicion{
+    0%{
+       opacity: 0;
+    }
+
+    50%{
+        opacity: 0.5;
+    }
+    70%{
+        opacity: 0.7;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+#botonr{
+    padding-left: 20px;
+    margin-right: 160vh;
+    margin-top: -13vh;
+
+}
+.puntos{
+   
+    padding-left: 15px;
+    color: black;
+    
 }

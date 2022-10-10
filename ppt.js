@@ -25,6 +25,7 @@ const resultado = document.getElementById("text");
 const userImg = document.getElementById("user-img");
 const machineImg = document.getElementById("machine-img");
 const contadorPartidas = document.getElementById("table");
+const resetbtn = document.getElementById("reset");
 
 
 
@@ -55,22 +56,29 @@ scissorsbtn.addEventListener("click", () => {
     
 }
 );
+resetbtn.addEventListener("click", () => {
+    /* habilitar los botones */
+    rockbtn.disabled = false;
+    paperbtn.disabled = false;
+    scissorsbtn.disabled = false;
+    /* ocultar el boton de reset */
+    reset.style.display = "none";
+    text.innerHTML = "¿Piedra, papel o tijera?";
+    userImg.src = "img/piedra.jpg";
+    machineImg.src = "img/piedra.jpg";
+    contadorPartidas.innerHTML = "Partidas: " + usercontador + " - " + machinecontador;
+}
+);
 
 function play(useroption){
     const machineoption = Math.floor(Math.random() * 3);
     const result = clacResult(useroption, machineoption);
-
-
-
-
-
+    /* ocultar el boton de reset */
     
+
        
         machineImg.src = machineoption == ROCK ? "img/piedra.jpg" : machineoption == PAPER ? "img/papel.jpg" : "img/tijera.jpg";
    
-    
-        
-
 
     switch(result){
         case TIE:
@@ -85,6 +93,13 @@ function play(useroption){
                 text.innerHTML = "¡Ganaste la partida!😎";
                 usercontador = 0;
                 machinecontador = 0;
+                /* desabilitar los botones */
+                rockbtn.disabled = true;
+                paperbtn.disabled = true;
+                scissorsbtn.disabled = true;
+                /* mostrar el boton de reset */
+                reset.style.display = "block";
+
             }
             break;
         case LOSE:
@@ -95,6 +110,12 @@ function play(useroption){
                 text.innerHTML = "¡Perdiste la partida!😭";
                 usercontador = 0;
                 machinecontador = 0;
+                /* desabilitar los botones */
+                rockbtn.disabled = true;
+                paperbtn.disabled = true;
+                scissorsbtn.disabled = true;
+                /* mostrar el boton de reset */
+                reset.style.display = "block";
             }
 
             break;
