@@ -92,3 +92,10 @@ button:hover{
     margin-top: 45px;
     box-shadow: 3px 3px 3px 3px black;
 }
+#table{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border: 4px solid black;
+    border-radius: 5px;
+    font-size: 30px;
+}

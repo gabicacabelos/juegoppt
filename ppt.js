@@ -6,6 +6,10 @@ const TIE = 0;
 const WIN = 1;
 const LOSE = 2;
 
+let usercontador = 0;
+let machinecontador = 0;
+
+
 /* dar a cada imagen un valor numerico */
 
 
@@ -20,6 +24,8 @@ const scissorsbtn = document.getElementById("scissors");
 const resultado = document.getElementById("text");
 const userImg = document.getElementById("user-img");
 const machineImg = document.getElementById("machine-img");
+const contadorPartidas = document.getElementById("table");
+
 
 
 
@@ -55,19 +61,42 @@ function play(useroption){
     const result = clacResult(useroption, machineoption);
 
 
-    machineImg.src = machineoption == ROCK ? "img/piedra.jpg" : machineoption == PAPER ? "img/papel.jpg" : "img/tijera.jpg";
 
+
+
+    
+       
+        machineImg.src = machineoption == ROCK ? "img/piedra.jpg" : machineoption == PAPER ? "img/papel.jpg" : "img/tijera.jpg";
+   
+    
+        
 
 
     switch(result){
         case TIE:
             text.innerHTML = "Empate🤔";
+            contadorPartidas.innerHTML = "Partidas: " + usercontador + " - " + machinecontador;
             break;
         case WIN:
             text.innerHTML = "¡Ganaste!😁";
+            usercontador++;
+            contadorPartidas.innerHTML = "Partidas: " + usercontador + " - " + machinecontador;
+            if(usercontador == 10){
+                text.innerHTML = "¡Ganaste la partida!😎";
+                usercontador = 0;
+                machinecontador = 0;
+            }
             break;
         case LOSE:
             text.innerHTML = "Perdiste😒";
+            machinecontador++;
+            contadorPartidas.innerHTML = "Partidas: " + usercontador + " - " + machinecontador;
+            if(machinecontador == 10){
+                text.innerHTML = "¡Perdiste la partida!😭";
+                usercontador = 0;
+                machinecontador = 0;
+            }
+
             break;
     }
 
